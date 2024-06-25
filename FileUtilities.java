@@ -10,19 +10,19 @@ public final class FileUtilities {
     }
 
     public static String uploadFile(String path) {
-        String str = "";
-        File file = new File(path+ ".txt"); 
+        StringBuilder str = new StringBuilder();
+        File file = new File(path);
 
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-            str = scanner.useDelimiter("\\A").next();
-            scanner.close();
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                str.append(scanner.nextLine()).append(System.lineSeparator());
+            }
         } catch (FileNotFoundException e) {
-            System.out.print("Failed to load file");
-            System.out.print(e);
-        }	
-        return str;
+            System.err.println("Failed to load file: " + file.getAbsolutePath());
+            e.printStackTrace();
+        }
+
+        return str.toString().trim();
     }
     
 }

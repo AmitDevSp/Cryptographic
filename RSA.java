@@ -5,7 +5,7 @@ import java.util.Random;
 public class RSA {
 
 	public static void main(String[] args) {
-		String plainText = FileUtilities.uploadFile("PlainMessage_Example");
+		String plainText = FileUtilities.uploadFile("PlainMessage_Example.txt");
 		HashMap<BigInteger, BigInteger> p_q_primes = generate_p_q_differentPrimes();
 
         BigInteger p = p_q_primes.keySet().iterator().next();

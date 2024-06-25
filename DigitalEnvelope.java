@@ -4,9 +4,9 @@ import java.util.HashMap;
 public class DigitalEnvelope {
 
 	public static void main(String[] args) {
-		String plainText = FileUtilities.uploadFile("PlainMessage_Example");			//short message
-		String initVector = FileUtilities.uploadFile("IV_Example");						//initial vector
-		String symmetricKey = FileUtilities.uploadFile("Key_Example");							//a-h key
+		String plainText = FileUtilities.uploadFile("PlainMessage_Example.txt");			//short message
+		String initVector = FileUtilities.uploadFile("IV_Example.txt");						//initial vector
+		String symmetricKey = FileUtilities.uploadFile("Key_Example.txt");							//a-h key
 
 		HashMap<BigInteger, BigInteger> p_q_primes = RSA.generate_p_q_differentPrimes();
 

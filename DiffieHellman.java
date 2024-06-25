@@ -8,7 +8,7 @@ import java.util.Random;
 public class DiffieHellman {
 
 	public static void main(String[] args) {
-		String plainText = FileUtilities.uploadFile("PlainMessage_Example");			//short message
+		String plainText = FileUtilities.uploadFile("PlainMessage_Example.txt");			//short message
 		String senderInfo = "group_4";
 		String CAInfo = "CyberSecurity2020";
 		int length = (plainText.getBytes().length +4)/2;
