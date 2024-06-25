@@ -1,5 +1,3 @@
-//to verify
-
 public class CipherBlockChaining {
 
 	public static void main(String[] args) {
